@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GitHubUser</string>
+    <string name="searchbar_hint">Enter username</string>
+    <string name="tab_followers">Followers</string>
+    <string name="tab_following">Following</string>
+    <string name="separator_follow">-</string>
+    <string name="data_followers">%d Followers</string>
+    <string name="data_following">%d Following</string>
+    <string name="followers_following">Followers / Following</string>
+</resources>
