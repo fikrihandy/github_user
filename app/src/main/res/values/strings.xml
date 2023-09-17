@@ -7,4 +7,8 @@
     <string name="data_followers">%d Followers</string>
     <string name="data_following">%d Following</string>
     <string name="followers_following">Followers / Following</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="menu_1">Favorite</string>
+    <string name="menu_2">Setting</string>
+    <string name="favoriteFab">Favorite</string>
 </resources>

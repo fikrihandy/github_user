@@ -3,6 +3,7 @@ package academy.bangkit.githubuser.ui
 import academy.bangkit.githubuser.data.remote.response.GithubUser
 import academy.bangkit.githubuser.databinding.UserSearchBinding
 import academy.bangkit.githubuser.ui.detail.DetailActivity
+import academy.bangkit.githubuser.ui.extension.loadImageWithGlide
 import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater

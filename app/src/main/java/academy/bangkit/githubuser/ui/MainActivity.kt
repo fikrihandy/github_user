@@ -1,9 +1,14 @@
 package academy.bangkit.githubuser.ui
 
+import academy.bangkit.githubuser.R
 import academy.bangkit.githubuser.databinding.ActivityMainBinding
+import academy.bangkit.githubuser.databinding.ActivitySettingBinding
 import academy.bangkit.githubuser.data.remote.response.GithubUser
+import academy.bangkit.githubuser.ui.setting.SettingActivity
+import academy.bangkit.githubuser.ui.extension.observeThemeSetting
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -14,11 +19,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var settingBinding: ActivitySettingBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        settingBinding = ActivitySettingBinding.inflate(layoutInflater)
+        val switchTheme = settingBinding.switchTheme
+        observeThemeSetting(switchTheme)
 
         val mainViewModel = ViewModelProvider(
             this, ViewModelProvider.NewInstanceFactory()
@@ -49,6 +59,23 @@ class MainActivity : AppCompatActivity() {
                 false
             }
         }
+
+        binding.topAppBar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.menuFavorite -> {
+                    Log.d("MENU", "MENU FAV CLICKED")
+                    true
+                }
+
+                R.id.menuSetting -> {
+                    startActivity(Intent(this@MainActivity, SettingActivity::class.java))
+                    true
+                }
+
+                else -> false
+            }
+        }
+
     }
 
     private fun setItemData(users: List<GithubUser>) {

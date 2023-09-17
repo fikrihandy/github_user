@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import academy.bangkit.githubuser.databinding.ActivityDetailBinding
 import academy.bangkit.githubuser.ui.DialogFragment
-import academy.bangkit.githubuser.ui.loadImageWithGlide
+import academy.bangkit.githubuser.ui.extension.loadImageWithGlide
 import android.view.View
 import androidx.annotation.StringRes
 import androidx.lifecycle.Observer

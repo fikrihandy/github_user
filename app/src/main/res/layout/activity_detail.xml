@@ -1,92 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="12dp"
-    android:orientation="vertical"
-    android:background="@color/blueDark"
-    tools:context=".ui.detail.DetailActivity">
+    android:layout_height="match_parent">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/avatar"
-        android:layout_width="match_parent"
-        android:layout_height="75dp" />
-
-    <include
-        android:id="@+id/loadingView"
-        layout="@layout/loading_view"
-        android:layout_width="match_parent"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        tools:visibility="visible" />
-
-    <TextView
-        android:id="@+id/name"
-        android:textColor="@color/white"
-        android:paddingTop="12dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textAppearance="@style/MaterialAlertDialog.Material3.Title.Text"
-        android:textStyle="bold"
-        android:gravity="center" />
-
-    <TextView
-        android:id="@+id/username"
-        android:textColor="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textStyle="italic"
-        android:textColorHighlight="@color/design_default_color_on_secondary"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-        tools:text="usernameGH" />
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/baseline_favorite_border_24"
+        android:contentDescription="@string/favoriteFab"
+        android:layout_margin="16dp" />
 
     <LinearLayout
-        android:id="@+id/following_followers"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginBottom="12dp">
+        android:layout_height="match_parent"
+        android:paddingTop="12dp"
+        android:orientation="vertical"
+        android:background="@color/blueDark"
+        tools:context=".ui.detail.DetailActivity">
 
-        <TextView
-            android:id="@+id/followers"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar"
+            android:layout_width="match_parent"
+            android:layout_height="75dp" />
 
-        <TextView
-            android:id="@+id/separatorFollow"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
+        <include
+            android:id="@+id/loadingView"
+            layout="@layout/loading_view"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:text="@string/separator_follow" />
+            android:visibility="invisible"
+            tools:visibility="visible" />
 
         <TextView
-            android:id="@+id/following"
+            android:id="@+id/name"
             android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:paddingTop="12dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textAppearance="@style/MaterialAlertDialog.Material3.Title.Text"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/username"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:textColorHighlight="@color/design_default_color_on_secondary"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            tools:text="usernameGH" />
+
+        <LinearLayout
+            android:id="@+id/following_followers"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/followers"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/separatorFollow"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="@string/separator_follow" />
+
+            <TextView
+                android:id="@+id/following"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!--    Tab Layout-->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:contentDescription="@string/followers_following"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:tabTextColor="@android:color/white" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
-    <!--    Tab Layout-->
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabs"
-        android:contentDescription="@string/followers_following"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        app:tabTextColor="@android:color/white" />
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

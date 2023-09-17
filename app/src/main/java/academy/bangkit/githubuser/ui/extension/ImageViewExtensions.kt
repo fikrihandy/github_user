@@ -1,4 +1,4 @@
-package academy.bangkit.githubuser.ui
+package academy.bangkit.githubuser.ui.extension
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide
