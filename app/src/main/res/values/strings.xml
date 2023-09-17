@@ -11,4 +11,6 @@
     <string name="menu_1">Favorite</string>
     <string name="menu_2">Setting</string>
     <string name="favoriteFab">Favorite</string>
+    <string name="your_fav">Daftar Favorite</string>
+    <string name="empty_fav_users">Tidak ada daftar Favorite</string>
 </resources>

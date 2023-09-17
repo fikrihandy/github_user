@@ -8,7 +8,6 @@ import academy.bangkit.githubuser.ui.setting.SettingActivity
 import academy.bangkit.githubuser.ui.extension.observeThemeSetting
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -63,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         binding.topAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menuFavorite -> {
-                    Log.d("MENU", "MENU FAV CLICKED")
+                    startActivity(Intent(this@MainActivity, FavUsersActivity::class.java))
                     true
                 }
 

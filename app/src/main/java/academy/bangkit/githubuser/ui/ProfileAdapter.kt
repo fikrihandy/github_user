@@ -8,7 +8,6 @@ import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -23,9 +22,6 @@ class ProfileAdapter : ListAdapter<GithubUser, ProfileAdapter.MyViewHolder>(DIFF
         val item = getItem(position)
         holder.bind(item)
         holder.itemView.setOnClickListener {
-            Toast.makeText(
-                holder.itemView.context, "Kamu memilih " + item.username, Toast.LENGTH_LONG
-            ).show()
             val intentToDetail =
                 Intent(holder.itemView.context as Activity, DetailActivity::class.java)
                     .putExtra(DetailActivity.USERNAME, item.username)
